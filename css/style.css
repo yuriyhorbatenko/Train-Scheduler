@@ -4,7 +4,7 @@ footer {
     font-size: 15px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.822);
-    color: #444444;
+    color: white;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -45,22 +45,81 @@ body {
     text-align: center;
     font-size: 40px;
     bottom: 20px;
-    color: white;
     float: left;
     font-weight: 400;
     padding: 30px;
-    
-
+    font-style: italic;
+    font-variant: small-caps;
 }
 
 .addTrain {
     background-color: rgba(0, 0, 0, 0.822);
     color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.808);
+    text-align: center;
+    font-size: 16px;
+
 }
 
 .table-dark {
-    background-color: rgba(0, 0, 0, 0.822);
-    
+    background-color: rgba(0, 0, 0, 0.911);
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 
+.table td, .table th {
+    border-top: none;
+}
+
+.table-dark thead th {
+border-color: rgba(255, 255, 255, 0.808);
+font-size: 18px;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.123);
+}
+
+.form-group {
+    margin-top: 1rem;
+    text-align: center;
+    font-variant: small-caps;
+    margin-bottom: 2rem;
+}
+
+.btn-lg {
+    padding: 4px;
+    font-variant: small-caps;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.123);
+    border-color: white;
+}
+
+.btn-lg:hover {
+    background-color:black;
+    border-color: white;
+    
+}
+
+#button {
+    margin-top: 3rem;
+}
+
+#addYourTrain {
+    font-size: 25px;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: 500;
+    padding-top: 0.5rem;
+}
+
+#trainShedule {
+    font-size: 25px;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
