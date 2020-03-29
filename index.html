@@ -43,7 +43,7 @@
           <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Train Name</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Train Name">
+                <input type="email" class="form-control trainName" id="exampleFormControlInput1" placeholder="Train Name">
               </div>
           </form>
       </div>
@@ -56,7 +56,7 @@
           <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Destination</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Destination">
+                <input type="email" class="form-control destination" id="exampleFormControlInput1" placeholder="Destination">
               </div>
           </form>
       </div> 
@@ -69,7 +69,7 @@
           <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">First Train Time (HH:mm - military time)</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="First Train Time">
+                <input type="email" class="form-control firstTrain" id="exampleFormControlInput1" placeholder="First Train Time">
               </div>
           </form>
       </div>
@@ -80,14 +80,14 @@
           <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Frequency</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Frequency">
+                <input type="email" class="form-control frequency" id="exampleFormControlInput1" placeholder="Frequency">
               </div>
           </form>
       </div> 
              
       <div class="col-2" id="button">
   
-        <button type="button" class="btn btn-primary btn-lg btn-block">Add Train</button>
+        <button type="buttonAdd" class="btn btn-primary btn-lg btn-block">Add Train</button>
   
       </div>
       
@@ -161,9 +161,10 @@
 
 
    
+    
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/train.js"></script>    
 
