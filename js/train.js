@@ -23,24 +23,35 @@ var Destination = "";
 var TrainTime = "";
 var Frequency = "";
 
-    
-var clockDiv = $("<div>");
-    clockDiv.attr("id", "clock");
-    $("#header").append(clockDiv);
 
-
+   
 function clock() {
+
+  var clockDiv = $("<div>");
+      clockDiv.attr("id", "clock");
+      $("#header").append(clockDiv);
 
   var currentTime1 = moment().format("MMM Do HH:mm:ss");
       $("#clock").text(currentTime1);
       setTimeout(clock, 1000);
 };
+
+
     
 
 $(".buttonAddTrain").on("click", function(event) {
   
 
   event.preventDefault();
+
+if  ($(".trainName").val().trim() === "" ||
+    $(".destination").val().trim() === "" ||
+    $(".firstTrain").val().trim() === "" ||
+    $(".frequency").val().trim() === "") {
+
+    alert("Please fill in all details to add new train");
+} 
+  else {
 
   NewTrainName = $(".trainName").val().trim();
   NewDestination = $(".destination").val().trim();
@@ -64,6 +75,7 @@ $(".buttonAddTrain").on("click", function(event) {
   $(".firstTrain").val("");
   $(".frequency").val("");
 
+}
 });
 
 
@@ -83,7 +95,7 @@ var tRemainder = diffTime % NewFrequency;
 var MinAway = NewFrequency - tRemainder;
 var NextArrival = moment().add(MinAway, "minutes");
 var NewNextArrival = moment(NextArrival).format("MMM Do, HH:mm")
-
+ 
 
 console.log(currentTime);
 console.log(NewTrainName);
@@ -99,6 +111,7 @@ var newRow = $("<tr>").append(
   $("<td>").text(NewFrequency),
   $("<td>").text(NewNextArrival),
   $("<td>").text(MinAway),
+  $("<i class=DeleteMe></i>")
 );
 
 
@@ -106,4 +119,14 @@ $("#tableBody").append(newRow);
 
 });
 
+
+$("body").on("click", ".DeleteMe", function() {
+  $(this).closest("tr").remove();
+});
+
+
 clock();
+
+setInterval(function() {
+window.location.reload();
+}, 60000);

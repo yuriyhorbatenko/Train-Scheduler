@@ -66,11 +66,19 @@ body {
     font-variant: small-caps;
     font-weight: 600;
     font-size: 16px;
+    text-align: center;
 }
 
 
 .table td, .table th {
     border-top: none;
+    
+}
+
+#tableBody {
+    border-top: 2px solid rgba(255, 255, 255, 0.808);
+    
+
 }
 
 .table-dark thead th {
@@ -96,6 +104,7 @@ font-size: 18px;
     font-weight: 600;
     background-color: rgba(255, 255, 255, 0.123);
     border-color: white;
+    color: white;
 }
 
 .btn-lg:hover {
@@ -138,4 +147,17 @@ font-size: 18px;
     float: right;
     margin-right: 10%;
     margin-top: 3rem;
+}
+
+.DeleteMe {
+    content: url("../img/delete.png");
+    float: right;
+    max-width: 48px;
+    padding: 10px;
+    align-content: center;
+    margin: 0;
+}
+
+.DeleteMe:hover {
+    background-color: rgba(255, 99, 71, 0.541);
 }
