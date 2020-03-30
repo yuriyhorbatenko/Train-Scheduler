@@ -22,9 +22,24 @@ var TrainName = "";
 var Destination = "";
 var TrainTime = "";
 var Frequency = "";
+
+    
+var clockDiv = $("<div>");
+    clockDiv.attr("id", "clock");
+    $("#header").append(clockDiv);
+    
+
+function clock() {
+
+  var currentTime = moment().format("MMM Do HH:mm:ss");
+      $("#clock").text(currentTime);
+      setTimeout(clock, 1000);
+
+};
     
 
 $(".buttonAddTrain").on("click", function(event) {
+  
 
   event.preventDefault();
 
@@ -55,41 +70,38 @@ $(".buttonAddTrain").on("click", function(event) {
 
 
 
+
 database.ref().on("child_added", function(childSnapshot) {
+  
     
+
 var NewTrainName = childSnapshot.val().TrainName;
 var NewDestination = childSnapshot.val().Destination;
 var NewTrainTime = childSnapshot.val().TrainTime;
 var NewFrequency = childSnapshot.val().Frequency;
- 
+
+
 var firstTimeConverted = moment(NewTrainTime, "HH:mm")
 
-var currentTime = moment();
-      console.log("CURRENT TIME: " + moment(currentTime).format("MMM Do, HH:mm"));
-    
-      // Difference between the times
 var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    
-      // Time apart (remainder)
 var tRemainder = diffTime % NewFrequency;
-    
-      // Minute Until Train
 var MinAway = NewFrequency - tRemainder;
-      //console.log("MINUTES AWAY: " + MinAway);
-    
-      // Next Train
 var NextArrival = moment().add(MinAway, "minutes");
-      //console.log("NEXT ARRIVAL: " + moment(NextArrival).format("HH:mm"));
 var NewNextArrival = moment(NextArrival).format("MMM Do, HH:mm")
-    
-  
+var key = childSnapshot.key;   
+
+
+
     
 console.log(NewTrainName);
 console.log(NewDestination);
 console.log(NewTrainTime);
 console.log(NewFrequency);
     
-      
+
+
+
+    
 var newRow = $("<tr>").append(
   $("<td>").text(NewTrainName),
   $("<td>").text(NewDestination),
@@ -97,8 +109,22 @@ var newRow = $("<tr>").append(
   $("<td>").text(NewNextArrival),
   $("<td>").text(MinAway),
 );
-      
+
+newRow.addClass("DeleteMe")
+newRow.attr("id", key);
+console.log(newRow);
+
 $("#tableBody").append(newRow);
 
 
+document.getElementById(key).onclick = function() {
+  alert("hello")
+  console.log(this)
+};
+
+
 });
+
+clock();
+
+

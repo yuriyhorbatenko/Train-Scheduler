@@ -123,3 +123,19 @@ font-size: 18px;
     font-weight: 500;
     padding-bottom: 0.5rem;
 }
+
+.deleteBtn {
+    position: fixed;
+    right: 10%;
+}
+
+#clock {
+    font-size: 25px;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: 500;
+    color: white;
+    float: right;
+    margin-right: 10%;
+    margin-top: 3rem;
+}
